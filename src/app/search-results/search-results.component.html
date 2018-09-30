@@ -1,0 +1,15 @@
+<div class="body">
+  <p>
+    Simply enter a search below to query the Giphy API <br>Maybe try 'Cats'?
+  </p>
+  <input type="text" placeholder="enter any keyword" size="27" [(ngModel)]="value"
+    (ngModelChange)="searchGiphy()" id="inputBox" />
+</div>
+<div id="columns">
+  <div *ngFor="let res of results" id="figure">
+    <img src="{{res.images.preview_gif.url}}" />
+  </div>
+</div>
+<p *ngIf="results.length == 0 && searchedOnce && value.length != 0" class="body">
+  Nothing Found :(
+</p>

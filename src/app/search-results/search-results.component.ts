@@ -23,7 +23,8 @@ export class SearchResultsComponent implements OnInit {
       .subscribe((resp: any) => {
         this.searchedOnce = true;
         this.results = resp.data;
-      });
+      },
+      (err) => console.log("error",err));
   }
 
 }
